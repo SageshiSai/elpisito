@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+/** ============================================================= */
+/** COLORES CORPORATIVOS*/
+/** ============================================================= */
+
+:root{
+
+  --azul-logo: #256197;
+  --azul-oscuro: #1a456b;
+  --amarillo-logo: #e8b610;
+  --gris-logo: #b1b3b4;
+  --gris-oscuro: #999999;
+  --girs-medio: #dddddd;
+  --gris-claro: #eceeef;
+  --negro: #151515;
+  --rojo-aviso: #aa1d1d;
+
+}
+
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; /** 1rem */
+}
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+
+
+
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+
+
+
+}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+
+
+
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}
