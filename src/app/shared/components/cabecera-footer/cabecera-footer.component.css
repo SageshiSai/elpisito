@@ -1,9 +1,13 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+
 .contenedor{
   display: flex;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid white;
-  padding: 1.5rem 0.3rem 0;
+  padding: 1.5rem 0 0.3rem 0;
 }
 
 .contenedor-logo{
@@ -32,18 +36,18 @@
 
 .boton-app{
   width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-bottom: 1rem;
 }
 
 .boton-app > img{
   width: 100%;
-
 }
 
 .textos-app{
-  display: flex;
-  flex-direction: column;
-  color: white;
-  align-items: center;
+  display: none;
 }
 
 .disponible{
@@ -57,3 +61,69 @@
 }
 
 
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+}
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+
+}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+  .contenedor{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .textos-app{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+    color: white;
+  }
+
+  .boton-app{
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 0;
+  }
+
+  .contenedor-apps{
+    width: 70%;
+  }
+
+  .boton-app > img{
+    width: 40%;
+    height:fit-content;
+    margin-right: 1rem;
+  }
+
+  .texto-boton{
+    color: var(--amarillo-logo);
+
+  }
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}
