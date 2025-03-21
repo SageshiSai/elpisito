@@ -1,1 +1,12 @@
-<p>banner-horizontal works!</p>
+<div class="contenedor">
+  <img [src]="datos.imagen"  [alt]="datos.altImage" class="imagen" />
+  <div class="texto" >
+    <div>
+      <h3>
+        {{ datos.titular }}
+      </h3>
+      <p>{{ datos.claim }}</p>
+    </div>
+    <a [href]="datos.link">{{ datos.textoLink }}</a>
+  </div>
+</div>

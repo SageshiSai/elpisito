@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { BannerHorizontal } from '../../../core/models/utils';
 
 @Component({
   selector: 'app-banner-horizontal',
@@ -8,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class BannerHorizontalComponent {
 
+  // @Input() altImagen:String;
+  // @Input() imagen:String;
+  // @Input() titular:String;
+  // @Input() claim:String;
+  // @Input() link:String;
+  // @Input() textoLink:String;
+
+  @Input() datos: BannerHorizontal;
+  
 }
