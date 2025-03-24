@@ -2,8 +2,11 @@
   <h1>Bienvenidos a El Pisito</h1>
   <app-finder/>
   <div class="contenedor-banners">
-    <app-banner-horizontal [datos]="datos1"/>
-    <app-banner-horizontal [datos]="datos2"/>
+  @for(banner of aBanners ; track banner.id){
+    <app-banner-horizontal [datos]="banner"/>
+  }
+
+
   </div>
   <app-list-portada/>
 </div>

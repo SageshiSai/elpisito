@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ErrorComponent {
 
+  numeroError: number = 404;
+  mensajeError: string = "Página no encontrada";
 }
