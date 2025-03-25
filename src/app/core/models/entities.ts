@@ -1,6 +1,6 @@
 export interface BannerHorizontal {
   altImagen?: string;
-  imagen?: string;
+  imagen?: ImagenBanner;
   titular?: string;
   claim?: string;
   link?: string;
@@ -12,6 +12,6 @@ export interface BannerHorizontal {
 
 export interface ImagenBanner{
   id?: number;
-  nombre: string;
+  name: string;
   activo?: number;
 }

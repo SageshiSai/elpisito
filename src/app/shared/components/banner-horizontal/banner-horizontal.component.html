@@ -1,5 +1,6 @@
 <div class="contenedor">
-  <img appNoImagen src="http://localhost:8080/media/imagen-banner/"  [alt]="datos.altImagen" class="imagen" />
+  <img appNoImagenBanner [src]="url + (datos.imagen?.name || '')"  [alt]="datos.altImagen" class="imagen" />
+  <img src="assets/img/el-pisito.svg" alt="loguito" class="loguito" />
   <div class="texto" >
     <div>
       <h3>
@@ -7,6 +8,6 @@
       </h3>
       <p>{{ datos.claim }}</p>
     </div>
-    <a [href]="datos.link">{{ datos.textoLink }}</a>
+    <a *ngIf="!(datos.link == '' || datos.link == null || datos.link == '#' || datos.link == undefined)" routerLink="datos.link">{{ datos.textoLink }}</a>
   </div>
 </div>
