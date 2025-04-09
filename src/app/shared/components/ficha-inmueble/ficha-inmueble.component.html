@@ -1,0 +1,62 @@
+<article class="ficha-inmueble">
+
+  <!-- LOGO DE LA INMOBILIARIA -->
+  <img class="logo-inmobiliaria" [src]="url + datos.inmobiliaria.imagen.nombre" alt=":Logo de {{datos.inmobiliaria.nombre}}">
+
+  <div class="carousel-ficha">
+
+     <app-carousel-ficha [datosInmueble]="datos"/>
+
+  </div>
+
+  <div class="datos-generales">
+
+
+      <div class="cabecera-ficha" [routerLink]="['/detail-inmueble',datos.id]">
+
+          <h3 class="titular">{{datos.claim}}</h3>
+          <p class="precio">{{datos.precio | euros}}</p>
+          <p class="poblacion">{{datos.poblacion.nombre}}</p>
+          <p class="descripcion" >{{datos.descripcion}}</p>
+
+      </div>
+
+      <footer class="footer-ficha">
+
+          <div class="admin">
+
+              <i class="fa-solid fa-user-pen"></i>
+
+          </div>
+
+
+          <div class="iconos">
+
+              <div>
+                  <span>{{datos.numeroBanhos}}</span>
+                  <img src="assets/img/004-bathtub.svg" alt="icono baño">
+              </div>
+
+              <div>
+                  <span>{{datos.numeroHabitaciones}}</span>
+                  <img src="assets/img/017-bed.svg" alt="icono habitaciones">
+              </div>
+
+              <div>
+                  <span>{{datos.planta}}</span>
+                  <img src="assets/img/011-office building.svg" alt="icono edificio">
+              </div>
+
+          </div>
+
+
+
+      </footer>
+
+
+
+  </div>
+
+
+
+</article>

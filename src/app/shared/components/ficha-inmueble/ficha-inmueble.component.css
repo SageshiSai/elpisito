@@ -1,0 +1,219 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.ficha-inmueble{
+
+  display: flex;
+  flex-direction: column;
+  border:1px solid var(--gris-medio);
+  border-radius: 0.5rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.logo-inmobiliaria{
+  position:absolute;
+  width: 80px;
+  height: auto;
+  right: 10px;
+  top: 10px;
+  z-index: 5;
+}
+
+
+.carousel-ficha{
+
+  width: 100%;
+}
+
+.datos-generales{
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.iconos{
+  display: flex;
+  gap:1rem;
+  width: 50%;
+  justify-content: right;
+  margin-right: 1rem;
+
+}
+
+.iconos img{
+
+  height: 1.4rem;
+  width: auto;
+}
+
+.iconos div{
+
+  display: flex;
+  align-items: center;
+  gap:0.2rem;
+
+}
+
+.iconos span{
+
+  font-size: 1.3rem;
+  color: var(--negro);
+  font-weight: 600;
+}
+
+.footer-ficha{
+
+  background-color: var(--gris-claro);
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+
+
+
+.precio{
+
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.descripcion{
+
+  /* UNA LINEA... */
+  /* white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; */
+
+  /* VARIAS LINEAS */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* Oculta el contenido desbordado */
+
+}
+
+.descripcion::first-line{
+
+  color:var(--azul-logo);
+  font-size: 1.2rem;
+}
+
+.cabecera-ficha{
+
+  padding:1rem;
+  cursor: pointer;
+}
+
+.admin i{
+
+  font-size: 1.2rem;
+  color: white;
+}
+
+.admin{
+  background-color:var(--azul-logo);
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ margin-left: 1rem;
+ border: var(--amarillo-logo) solid 2px;
+}
+
+
+
+
+
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+
+
+
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+  .ficha-inmueble{
+
+
+      flex-direction: row;
+      border:1px solid var(--gris-medio);
+      border-radius: 0.5rem;
+      position: relative;
+      width: 100%;
+      height: 300px;
+      justify-content: space-between;
+
+  }
+
+  .carousel-ficha{
+
+      height: 300px;
+      width: 40%;
+
+  }
+
+
+
+  .datos-generales{
+
+      height: 300px;
+      width: 60%;
+
+  }
+
+
+  .footer-ficha{
+      padding: 0.5rem 0;
+  }
+
+
+
+  .logo-inmobiliaria{
+
+      width: 100px;
+      left: 10px;
+      top: 10px;
+
+  }
+
+
+}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+
+
+
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}
