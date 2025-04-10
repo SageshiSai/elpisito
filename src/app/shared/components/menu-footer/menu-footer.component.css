@@ -5,26 +5,26 @@
 .contenedor{
 
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 3rem 0;
-  border-bottom: 1px solid var(--gris-oscuro);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris-oscuro);
 }
 
 .links{
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 a{
-  color:white;
-  font-size: 0.8rem;
-  padding: 5px 0;
+    color:white;
+    font-size: 0.8rem;
+    padding: 5px 0;
 }
 
 h3{
-  color: var(--amarillo-logo);
+    color: var(--amarillo-logo);
 }
 
 
@@ -35,7 +35,7 @@ h3{
 /* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
 @media only screen and (min-width:576px){
 
-
+ 
 
 
 
@@ -45,33 +45,33 @@ h3{
 /* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
 @media only screen and (min-width:768px){
 
-  .contenedor{
+    .contenedor{
 
-      padding: 1.5rem 0;
+        padding: 1.5rem 0;
 
-  }
+    }
 
- .corporativo{
-  display: flex;
-  gap:8px;
- }
+   .corporativo{
+    display: flex;
+    gap:8px;
+   }
 
- .secciones{
-  display: flex;
-  gap:8px;
- }
+   .secciones{
+    display: flex;
+    gap:8px;
+   }
 
 
- .links{
+   .links{
 
-  border-left: 2px solid var(--amarillo-logo);
-  padding-left: 8px;
+    border-left: 2px solid var(--amarillo-logo);
+    padding-left: 8px;
+  
+    }
 
-  }
-
-  a{
-      padding:0 0 8px 0;
-  }
+    a{
+        padding:0 0 8px 0;
+    }
 
 
 }
@@ -82,7 +82,7 @@ h3{
 @media only screen and (min-width:992px){
 
 
-
+  
 
 }
 

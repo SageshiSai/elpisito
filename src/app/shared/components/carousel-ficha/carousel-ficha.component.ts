@@ -18,7 +18,7 @@ export class CarouselFichaComponent implements OnInit {
   imagenesActivas:Array<Imagen> = [];
 
   ngOnInit(): void {
-
+    
     this.imagenesActivas  =  this.datosInmueble.imagenes.filter( img => img.activo === 1 );
 
     console.log(this.imagenesActivas);

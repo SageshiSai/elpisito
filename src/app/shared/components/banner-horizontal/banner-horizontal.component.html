@@ -1,13 +1,30 @@
 <div class="contenedor">
-  <img appNoImagenBanner [src]="url + (datos.imagen?.name || '')"  [alt]="datos.altImagen" class="imagen" />
-  <img src="assets/img/el-pisito.svg" alt="loguito" class="loguito" />
-  <div class="texto" >
+
     <div>
-      <h3>
-        {{ datos.titular }}
-      </h3>
-      <p>{{ datos.claim }}</p>
+        <img appNoImagenBanner [src]="url + datos.imagen.nombre" [alt]="datos.altImagen" class="imagen">
+
+        <img class="logito" src="assets/img/el-pisito.svg">
+
     </div>
-    <a *ngIf="!(datos.link == '' || datos.link == null || datos.link == '#' || datos.link == undefined)" routerLink="datos.link">{{ datos.textoLink }}</a>
-  </div>
+
+
+    <div class="texto">
+
+        <div>
+
+            <h3>{{datos.titular}}</h3>
+            <p>{{datos.claim}}</p>
+        </div>
+
+        
+
+        @if(!(datos.link == "")){
+       
+             <a routerLink="/{{datos.link}}">{{datos.textoLink}}</a>
+        }
+
+    </div>
+
+
+
 </div>

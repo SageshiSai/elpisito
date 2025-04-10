@@ -3,9 +3,11 @@
 /* ================================================= */
 
 .contenedor{
-  background-color: var(--azul-oscuro);
-  padding: 0.8rem;
+
+    background-color: var(--azul-oscuro);
+    padding:0.8rem;
 }
+
 
 /* ================================================= */
 /* MEDIA QUERIES */
@@ -14,7 +16,7 @@
 /* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
 @media only screen and (min-width:576px){
 
-
+ 
 
 
 
@@ -24,7 +26,7 @@
 /* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
 @media only screen and (min-width:768px){
 
-
+   
 
 
 }
@@ -35,7 +37,7 @@
 @media only screen and (min-width:992px){
 
 
-
+  
 
 }
 

@@ -3,30 +3,30 @@
 /* ================================================= */
 
 .menu-principal{
-  position: sticky;
-  top:0;
-  left:0;
-  z-index: 100;
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 100;
 }
 
 .contenedor-logo{
 
-  display: flex;
-  gap:0.5rem;
-  align-items: center;
+    display: flex;
+    gap:0.5rem;
+    align-items: center;
 
 }
 
 .imagen-logo{
 
-  height: 20px;
+    height: 20px;
 }
 
 .texto-logo{
 
-  font-size: 1.2rem;
-  font-weight: bold;
-  color:var(--azul-logo);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:var(--azul-logo);
 }
 
 
@@ -40,7 +40,7 @@
 /* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
 @media only screen and (min-width:576px){
 
-
+ 
 
 
 
@@ -50,7 +50,7 @@
 /* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
 @media only screen and (min-width:768px){
 
-
+   
 
 
 }
@@ -61,7 +61,7 @@
 @media only screen and (min-width:992px){
 
 
-
+  
 
 }
 

@@ -11,14 +11,14 @@ import Modal from 'bootstrap/js/dist/modal';
 })
 export class ModalAdminComponent implements OnInit, OnDestroy{
 
-
+ 
   private _router:Router=inject(Router);
 
   @ViewChild('modalAdmin') modalAdmin:ElementRef;
-  @Input() datos:ModalData;
+  @Input() datos:ModalData; 
 
   clickHandler:any;
-
+  
   ngOnInit(): void {
     //Necesitamos referenciar la función que irá como callback en el addEventListener
     //porque de esta manera la podremos destruir (con su referencia) en el Hook OnDestroy
@@ -34,7 +34,7 @@ export class ModalAdminComponent implements OnInit, OnDestroy{
     //que van a quedar presentes en memoria: Observables hot, listeners...
 
     this.modalAdmin.nativeElement.removeEventListener('hidden.bs.modal', this.clickHandler);
-
+    
 
     }
 
@@ -48,7 +48,7 @@ export class ModalAdminComponent implements OnInit, OnDestroy{
 
   showModal():void{
 
-
+  
     const modal = new Modal(this.modalAdmin.nativeElement);
     modal.show();
 

@@ -33,7 +33,7 @@ export class VisorImagenComponent {
     /* console.log("sumatorio:" + dir);
     console.log("index de la imagen actual:" + this.indexActual);
     console.log("numero de imágenes:" + this.imagenes.length); */
-   /*  Utilizamos el operador % para que cuando estemos en la última imagen devuelva 0
+   /*  Utilizamos el operador % para que cuando estemos en la última imagen devuelva 0 
     logrando que volvamos a empezar el ciclo desde la primera imagen (indice 0) */
 
 
@@ -41,7 +41,7 @@ export class VisorImagenComponent {
     this.imagenActual = this.imagenes[this.indexActual];
 
 
-
+    
     /* console.log("url imagen actual:" + this.imagenActual); */
 
 

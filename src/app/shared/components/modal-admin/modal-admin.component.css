@@ -1,21 +1,21 @@
 img{
 
-  width: 60%;
-  height: auto;
+    width: 60%;
+    height: auto;
 }
 
 .modal-header div{
 
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  align-items: center;
-
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    
 }
 
 h2{
 
-  color: var(--azul-logo);
-  font-size: 32px;
-  font-weight: bold;
+    color: var(--azul-logo);
+    font-size: 32px;
+    font-weight: bold;
 }
