@@ -3,29 +3,39 @@
 /* ================================================= */
 
 .contenedor{
+
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
 }
 
+.copyright{
+
+  font-size: 1rem;
+}
+
 span{
+
   color: var(--amarillo-logo);
   font-size: 0.7rem;
 }
 
-.copyright{
-  font-size: 1rem;
-}
-
 a{
-  color: white;
-  font-size: 0.7rem;
+  color:white;
+  font-size: 0.8rem;
 }
 
 a:link{
-  color: white;
-
+  color:white;
 }
+
+.copyright-portal{
+
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* ================================================= */
 /* MEDIA QUERIES */
 /* ================================================= */
@@ -44,6 +54,18 @@ a:link{
 @media only screen and (min-width:768px){
 
 
+  .contenedor{
+
+      flex-direction: row;
+      justify-content: space-between;
+
+  }
+
+  .copyright-portal{
+      flex-direction: row;
+      align-items: center;
+      gap:10px;
+  }
 
 
 }

@@ -1,67 +1,94 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light menu-principal bg-body-tertiary ">
+<nav collapseOnSelect class="navbar navbar-expand-lg navbar-light bg-light menu-principal">
+
   <div class="container-fluid">
-    <a class="navbar-brand contenedor-logo" routerLink="">
-      <img class="imagen-logo" src="assets/img/el-pisito.svg" alt="El Pisito: La silueta de una casa cuya entrada es un corazón" >
+
+    <a class="navbar-brand contenedor-logo" routerLink="home">
+
+      <img class="imagen-logo" src="assets/img/el-pisito.svg" alt="logo El Pisito: silueta de una casa cuya entrada es un corazón">
+
       <span class="texto-logo">El Pisito</span>
+
     </a>
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+          <a  data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show"  class="nav-link" aria-current="page" routerLink="home">Home</a>
         </li>
 
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuCorporativo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuCorporativo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Corporativo
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuCorporativo">
-            <li><a class="dropdown-item" routerLink="about">Sobre El Pisito.com</a></li>
-            <li><a class="dropdown-item" routerLink="contact">Contactar</a></li>
-            <li><a class="dropdown-item" routerLink="mapa-web">Mapa Web</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="sobre-el-pisito">Sobre El Pisito.com</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="contactar">Contactar</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="mapa-web">Mapa Web</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuSeccion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuSecciones" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Secciones
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuSeccion">
-            <li><a class="dropdown-item" routerLink="publica-tu-anuncio">Publica tu anuncio</a></li>
-            <li><a class="dropdown-item" routerLink="consulta-hipoteca">Consultor de hipoteca</a></li>
-            <li><a class="dropdown-item" routerLink="servicios">Servicios</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuSecciones">
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="publica-anuncio">Publica tu anuncio</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show"class="dropdown-item" routerLink="consulta-hipoteca">Consultor de hipotecas</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show"class="dropdown-item" routerLink="servicios">Servicios</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Administracion
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Administración
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAdministracion">
-            <li><a class="dropdown-item" routerLink="publica-tu-anuncio">Añadir un inmueble</a></li>
-            <li><a class="dropdown-item" routerLink="consulta-hipoteca">Listado de inmuebles</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="publica-anuncio">+Inmueble</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show"class="dropdown-item" routerLink="consulta-hipoteca">Listado de inmuebles</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="servicios">Añadir poblacion</a></li>
-            <li><a class="dropdown-item" routerLink="servicios">Listado de poblacion</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Población</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de poblaciones</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="servicios">Añadir Provincia</a></li>
-            <li><a class="dropdown-item" routerLink="servicios">Listado de Provincias</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-provincia">+Provincia</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-provincia">Listado de provincias</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="servicios">Añadir Tipo</a></li>
-            <li><a class="dropdown-item" routerLink="servicios">Listado de Tipos</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-tipo">+Tipo</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-tipo">Listado de tipos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="servicios">Añadir Usuario</a></li>
-            <li><a class="dropdown-item" routerLink="servicios">Listado de Usuarios</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Usuario</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de usuarios</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Banner Horizontal</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de Banners Horizontales</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Banner Carousel </a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de Banners Carousel</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Temática</a></li>
+            <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de Temáticas</a></li>
           </ul>
         </li>
+
 
         <li class="nav-item">
           <a class="nav-link" href="#">Login</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Logout</a>
         </li>
-        
+
+
       </ul>
     </div>
   </div>

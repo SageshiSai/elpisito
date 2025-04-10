@@ -1,0 +1,73 @@
+<div class="contenedor-listado">
+
+
+  <h1>Listado de tipos</h1>
+
+  @if(!cargaCompletada){
+
+      <app-preloader/>
+  }@else {
+
+      <div class="contenedor-tabla">
+
+          <table class="table">
+
+              <thead>
+                  <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">TIPO</th>
+                      <th scope="col" class="centrar-activo">ACTIVO</th>
+                      <th scope="col">EDITAR</th>
+
+                  </tr>
+
+              </thead>
+
+              <tbody>
+
+                  @for( dato of aDatos; track dato.id){
+
+                      <tr>
+                          <th scope="row">{{dato.id}}</th>
+                          <td>{{dato.nombre}}</td>
+                         <td [ngClass] = "{
+
+                              'item-activo': dato.activo == 1,
+                              'item-inactivo': dato.activo === 0
+
+                          }">
+                          @if(dato.activo == 1){
+                              <i class="fa-solid fa-check"></i>
+                          }@else {
+                              <i class="fa-solid fa-xmark"></i>
+                          }
+
+
+                          </td>
+
+                          <td><button type="button" class="btn btn-success btn-sn" [routerLink]="['/admin/edit-tipo', dato.id ]">Editar</button></td>
+
+
+                      </tr>
+                  }
+
+
+
+
+              </tbody>
+
+
+
+
+
+
+          </table>
+
+
+      </div>
+
+
+  }
+
+
+</div>

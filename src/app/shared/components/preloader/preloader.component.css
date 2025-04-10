@@ -1,25 +1,17 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
-
 .contenedor{
-  display: flex;
-  flex-direction: column;
+
+  display:flex;
+  justify-content: center;
+  padding: 3rem 0;
   align-items: center;
-  padding: 2rem 0;
 }
 
 img{
-  height: 150px;
-  width: auto;
+  height: 80px;
 }
-
-.numero-error{
-  color: var(--amarillo-logo);
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 
 
 /* ================================================= */

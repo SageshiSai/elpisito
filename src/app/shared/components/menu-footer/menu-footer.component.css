@@ -3,29 +3,30 @@
 /* ================================================= */
 
 .contenedor{
+
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 1rem 0;
-  border-bottom: 1px solid white;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--gris-oscuro);
 }
 
 .links{
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+}
+
+a{
+  color:white;
+  font-size: 0.8rem;
+  padding: 5px 0;
 }
 
 h3{
   color: var(--amarillo-logo);
-  padding-bottom: 10px;
 }
 
-a{
-  color: white;
-  font-size: 0.8rem;
-
-}
 
 /* ================================================= */
 /* MEDIA QUERIES */
@@ -44,7 +45,33 @@ a{
 /* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
 @media only screen and (min-width:768px){
 
+  .contenedor{
 
+      padding: 1.5rem 0;
+
+  }
+
+ .corporativo{
+  display: flex;
+  gap:8px;
+ }
+
+ .secciones{
+  display: flex;
+  gap:8px;
+ }
+
+
+ .links{
+
+  border-left: 2px solid var(--amarillo-logo);
+  padding-left: 8px;
+
+  }
+
+  a{
+      padding:0 0 8px 0;
+  }
 
 
 }

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu-footer',
-  imports: [
-    RouterModule
-  ],
+  imports: [RouterLink],
   templateUrl: './menu-footer.component.html',
   styleUrl: './menu-footer.component.css'
 })

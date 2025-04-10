@@ -1,38 +1,52 @@
-/** ============================================================= */
-/** COLORES CORPORATIVOS*/
-/** ============================================================= */
+/* ================================================================ */
+/* COLORES CORPORATIVOS */
+/* ================================================================ */
 
 :root{
 
-  --azul-logo: #256197;
-  --azul-oscuro: #1a456b;
-  --amarillo-logo: #e8b610;
-  --gris-logo: #b1b3b4;
-  --gris-oscuro: #999999;
-  --girs-medio: #dddddd;
-  --gris-claro: #eceeef;
-  --negro: #151515;
-  --rojo-aviso: #aa1d1d;
+  --azul-logo:#256197;
+  --azul-oscuro:#1a456b;
+  --amarillo-logo:#e8b610;
+  --gris-logo:#b1b3b4;
+  --gris-oscuro:#999999;
+  --gris-medio:#dddddd;
+  --gris-claro:#eceeef;
+  --negro:#151515;
+  --rojo-aviso:#aa1d1d;
 
 }
+
 
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
 
 *{
-  margin: 0;
-  padding: 0;
-  list-style: none;
+
+  margin:0;
+  padding:0;
+  list-style:none;
   text-decoration: none;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
+  border:none;
+  outline:none;
+  box-sizing:border-box;
+
+
+
 }
 
+html,body{
+
+
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px; /* 1rem */
+
+}
+
+
 h1{
-  font-size: 24px;
-  margin: 0;
+  font-size: 20px;
   padding: 1rem;
   background-color: var(--gris-claro);
   border-radius: 10px;
@@ -40,24 +54,109 @@ h1{
 }
 
 h2{
+
   font-size: 18px;
   margin: 0px;
   padding: 0px;
+
 }
 
 h3{
   font-size: 16px;
   margin: 0px;
   padding: 0px;
+
 }
-  
+
 a{text-decoration: none;}
 
-html, body{
-  height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px; /** 1rem */
+
+/* ESTOS ESTILOS SON PARA LOS LIST */
+
+.contenedor-listado{
+
+  padding: 1rem;
 }
+
+.contenedor-tabla{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.table{
+  width: 100%;
+}
+
+
+
+
+table .item-inactivo{
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+
+}
+
+table .item-activo{
+  font-size: 1.2rem;
+  color: green;
+  text-align: center;
+
+}
+
+.centrar-activo{
+
+  text-align: center;
+}
+
+.centrar-portada{
+  text-align: center;
+}
+
+td,th{
+  vertical-align: middle;
+}
+
+/* ESTO ES PARA LOS FORMULARIOS */
+
+.formulario{
+
+  width: 50%;
+}
+
+.id-form{
+  background-color: var(--gris-claro);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.cursor-check{
+  cursor: pointer;
+}
+
+
+.contenedor-formulario{
+
+  display: flex;
+  justify-content: center;
+  padding: 0 0 2rem 0;
+}
+
+.contenedor-boton{
+
+  display: flex;
+  justify-content: right;
+  padding-top: 1rem;
+}
+
+.select-inactivo{
+
+  background-color: var(--rojo-aviso);
+  color: white;
+}
+
 
 /* ================================================= */
 /* MEDIA QUERIES */
@@ -98,3 +197,5 @@ html, body{
 
 
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

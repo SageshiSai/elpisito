@@ -4,26 +4,34 @@
 
 .menu-principal{
   position: sticky;
-  top: 0;
-  left: 0;
+  top:0;
+  left:0;
   z-index: 100;
 }
 
 .contenedor-logo{
+
   display: flex;
-  gap: 0.5rem;
+  gap:0.5rem;
   align-items: center;
+
 }
 
 .imagen-logo{
+
   height: 20px;
 }
 
 .texto-logo{
+
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--azul-logo)
+  color:var(--azul-logo);
 }
+
+
+
+
 
 /* ================================================= */
 /* MEDIA QUERIES */

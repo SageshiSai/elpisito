@@ -1,0 +1,25 @@
+<div class="visor-container">
+
+  <!-- https://jossef.github.io/material-design-icons-iconfont/ -->
+  <button mat-icon-button class="cerrar" (click) ="dialogRef.close() "> <mat-icon>close</mat-icon></button>
+
+  @if(imagenes.length > 1){
+
+
+      <button mat-icon-button class="prev" (click)="cambiarImagen(-1)"><mat-icon>arrow_back_ios_new</mat-icon></button>
+
+  }
+
+  <img [src]="imagenActual" alt="interior inmueble" class="imagen-visor">
+
+  @if(imagenes.length > 1){
+
+
+      <button mat-icon-button class="next" (click)="cambiarImagen(1)"><mat-icon>arrow_forward_ios</mat-icon></button>
+
+  }
+
+
+
+
+</div>

@@ -1,0 +1,60 @@
+<section class="contenedor">
+
+  <h1>Editar provincia</h1>
+
+  @if(!cargaCompletada){
+
+      <app-preloader/>
+
+
+  }@else {
+
+
+      <div class="contenedor-formulario">
+
+
+          <form  #form="ngForm" class="formulario" (ngSubmit)="edit()">
+
+              <p class="id-form mb-3">ID:{{provincia.id}}</p>
+
+              <div class="mb-3">
+
+                  <label for="activo" class="me-2 cursor-check">ACTIVO</label>
+                  <input type="checkbox" id="activo" name="activo" class="form-check-input cursor-check" [(ngModel)]="provincia.activo">
+
+              </div>
+
+
+              <div class="mb-3">
+
+                  <label for="provincia">PROVINCIA*:</label>
+                  <input type="text" id="provincia" name="provincia" required class="form-control" autocomplete="off" style="text-transform:uppercase"  [(ngModel)]="provincia.nombre">
+
+
+              </div>
+
+
+              <div class="contenedor-boton">
+
+                  <button class="btn btn-md btn-primary" type="submit" [disabled] = "form.invalid" >Modificar</button>
+              </div>
+
+
+
+
+          </form>
+
+
+      </div>
+
+
+
+
+  }
+
+
+</section>
+
+
+<!-- VENTANA MODAL -->
+<app-modal-admin [datos]="datosModal"/>
