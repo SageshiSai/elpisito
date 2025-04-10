@@ -2,9 +2,9 @@
 
    <h2 class="oportunidades">
     Las mejores oportunidades!!!
-    <img src="assets/img/el-pisito.svg" class="imagen-logo">
-    <img src="assets/img/el-pisito.svg" class="imagen-logo2">
-    <img src="assets/img/el-pisito.svg" class="imagen-logo3">
+    <img src="assets/img/el-pisito.svg" class="imagen-logo" alt="El Pisito logo">
+    <img src="assets/img/el-pisito.svg" class="imagen-logo2" alt="El Pisito logo">
+    <img src="assets/img/el-pisito.svg" class="imagen-logo3" alt="El Pisito logo">
 
    </h2>
 
@@ -12,16 +12,16 @@
    @if(!cargaCompletada){
 
         <app-preloader/>
-    
+
    }@else {
 
         @for( inmueble  of inmuebles  ;  track inmueble.id  ){
 
             <app-ficha-inmueble [datos]="inmueble" class="ficha-inmueble"/>
-        
+
         }
 
-       
+
    }
 
 

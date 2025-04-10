@@ -9,20 +9,20 @@ import { GLOBAL } from '../environments/global';
 })
 export class InmuebleService {
 
-  
-  private _http:HttpClient=inject(HttpClient);
+
+  private readonly _http:HttpClient=inject(HttpClient);
 
 
-    
+
   getInmuebles():Observable<Inmueble[]>{
-  
+
     return this._http.get<Inmueble[]>(GLOBAL.url + "inmuebles");
 
   }
 
 
   getInmueblesActivos():Observable<Inmueble[]>{
-  
+
     return this._http.get<Inmueble[]>(GLOBAL.url + "inmuebles-activos");
 
   }
@@ -39,11 +39,11 @@ export class InmuebleService {
   getInmueble(id:number):Observable<Inmueble>{
 
     return this._http.get<Inmueble>(GLOBAL.url + "inmueble/" + id);
-    
+
 
   }
-  
-  
+
+
   addInmueble(inmueble:Inmueble):Observable<any>{
 
     return this._http.post<any>(GLOBAL.url + "inmueble",inmueble);
@@ -54,10 +54,10 @@ export class InmuebleService {
 
     return this._http.put<any>(GLOBAL.url + "inmueble",inmueble);
   }
-  
-  
 
-  
 
-  
+
+
+
+
 }
