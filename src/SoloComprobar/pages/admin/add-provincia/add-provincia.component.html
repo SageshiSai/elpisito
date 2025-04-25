@@ -1,0 +1,34 @@
+<section class="contenedor">
+
+    <h1>+Provincia</h1>
+
+    <div class="contenedor-formulario">
+
+        <form #form="ngForm" class="formulario" (ngSubmit)="add()">
+
+            <div>
+                <label for="provincia">PROVINCIA*</label>
+                <input type="text" id="provincia" name="provincia" required class="form-control" style="text-transform: uppercase;"    autocomplete="off" [(ngModel)]="provincia.nombre">
+            </div>
+
+            <div class="contenedor-boton">
+
+                <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Provincia</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <app-modal-admin [datos]="datosModal"/>
+
+

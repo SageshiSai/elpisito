@@ -1,0 +1,125 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+
+.contenedor{
+
+    display: flex;
+   flex-direction: column;
+   position: relative;
+  
+}
+
+.logito{
+
+    width: 25px;
+    position:absolute;
+    right:10px;
+    top:10px;
+    filter: invert(1);
+
+}
+
+.imagen{
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0 ;
+}
+
+.texto{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--gris-claro);
+    padding: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    
+}
+
+.texto h3{
+
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.texto p{
+
+    margin-bottom: 0.8rem;
+    line-height: normal;
+}
+
+.texto a{
+
+    color:var(--negro);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.texto a::before{
+
+    background-image: url("../../../../../public/assets/img/el-pisito.svg");
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content:"";/* esta notación es importante */
+    margin-right: 0.3rem;
+
+
+}
+
+.texto a:link{
+
+    color:var(--negro);
+}
+
+
+
+
+
+
+
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+
+ 
+
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+   
+
+
+
+}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+
+
+  
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}

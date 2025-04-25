@@ -1,0 +1,47 @@
+.visor-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--gris-claro);
+    padding: 10px;
+
+}
+
+
+img.imagen-visor{
+
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+
+button{
+
+    position: absolute;
+    background:none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+
+.cerrar{
+    top:10px;
+    right: 20px;
+}
+
+.prev{
+    top:50%;
+    left: 20px;
+    transform:translateY(-50%);
+}
+
+.next{
+    top:50%;
+    right: 20px;
+    transform:translateY(-50%);
+}

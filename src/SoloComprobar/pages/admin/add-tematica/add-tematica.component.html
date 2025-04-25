@@ -1,0 +1,32 @@
+<section class="contenedor">
+
+    <h1>+Tematica</h1>
+
+    <div class="contenedor-formulario">
+
+        <form #form="ngForm" class="formulario" (ngSubmit)="add()">
+
+            <div>
+                <label for="tematica">TEMÁTICA*</label>
+                <input type="text" id="tematica" name="tematica" required class="form-control" style="text-transform: uppercase;"    autocomplete="off" [(ngModel)]="tematica.tematica">
+            </div>
+
+            <div class="contenedor-boton">
+
+                <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Tematica</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <app-modal-admin [datos]="datosModal"/>

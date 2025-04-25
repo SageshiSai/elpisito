@@ -1,0 +1,35 @@
+<section class="contenedor">
+
+    <h1>+Tipo</h1>
+
+    <div class="contenedor-formulario">
+
+        <form #form="ngForm" class="formulario" (ngSubmit)="add()">
+
+            <div>
+                <label for="tipo">TIPO*</label>
+                <input type="text" id="tipo" name="nombre" required class="form-control" style="text-transform: uppercase;"    autocomplete="off" [(ngModel)]="tipo.nombre">
+            </div>
+
+            <div class="contenedor-boton">
+
+                <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Tipo</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <app-modal-admin [datos]="datosModal"/>
+
+
+

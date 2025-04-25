@@ -1,0 +1,41 @@
+<section class="contenedor">
+
+    <h1>Registro de usuario</h1>
+
+    <div class="contenedor-formulario">
+
+        <form #form="ngForm"  (ngSubmit)="register()" [formGroup]="registerForm">
+
+            <div class="mb-3">
+                <label for="email">EMAIL*</label>
+                <input type="email" id="email" name="email" class="form-control"  autocomplete="off" [class.is-invalid]="registerForm.get('elEmail')?.invalid && registerForm.get('elEmail')?.touched" formControlName="elEmail">
+            </div>
+
+            <div class="mb-3">
+                <label for="password">PASSWORD*</label>
+                <input type="password" id="password" name="password" class="form-control"  autocomplete="off" [class.is-invalid]="registerForm.get('elPassword')?.invalid && registerForm.get('elPassword')?.touched" formControlName="elPassword">
+            </div>
+
+            <div class="mb-3">
+                <label for="usuario">USUARIO*</label>
+                <input type="text" id="usuario" name="usuario" class="form-control"  autocomplete="off" [class.is-invalid]="registerForm.get('elUsuario')?.invalid && registerForm.get('elUsuario')?.touched" formControlName="elUsuario">
+            </div>
+
+            <div class="contenedor-boton">
+
+                <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">Regístrate!!!</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+
+<!-- VENTANA MODAL -->
+<app-modal-usuario [datos]="datosModal"/>

@@ -1,0 +1,86 @@
+<div class="contenedor-listado">
+
+
+    <h1>Listado de inmuebles</h1>
+
+    @if(!cargaCompletada){
+
+        <app-preloader/>
+    }@else {
+
+        <div class="contenedor-tabla">
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">INMOBILIARIA GESTORA</th>
+                        <th scope="col">DIRECCIÓN</th>
+                        <th scope="col">POBLACIÓN</th>
+                        <th scope="col">PROVINCIA</th>
+                        <th scope="col">TIPO INMUEBLE</th>
+                        <th scope="col">OPERACIÓN</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col" class="centrar-activo">ACTIVO</th>
+                        <th scope="col">IMÁGENES</th>
+                        <th scope="col">ARCHIVOS</th>
+                        <th scope="col">EDITAR</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @for( dato of aDatos; track dato.id){
+
+                        <tr>
+                            <th scope="row">{{dato.id}}</th>
+                            <td><img appNoLogoInmobiliaria class="thumb-list-imagen" [src]="url + dato.inmobiliaria.imagen?.nombre"> - {{dato.inmobiliaria.nombre|mayusculas}}</td>
+                            <td>{{dato.direccionCompleta}}</td>
+                            <td>{{dato.poblacion.nombre}}</td>
+                            <td>{{dato.poblacion.provincia.nombre}}</td>
+                            <td>{{dato.tipo.nombre}}</td>
+                            <td>{{dato.operacion}}</td>
+                            <td>{{dato.precio|euros}}</td>
+
+                           <td [ngClass] = "{
+
+                                'item-activo': dato.activo == 1,
+                                'item-inactivo': dato.activo === 0
+
+                            }">
+                            @if(dato.activo == 1){
+                                <i class="fa-solid fa-check"></i>
+                            }@else {
+                                <i class="fa-solid fa-xmark"></i>
+                            }
+
+
+                            </td>
+
+                            <td><button type="button" class="btn btn-warning btn-sn" [routerLink]="['/admin/edit-imagen', dato.id ]">Imágenes</button></td>
+
+                            <td><button type="button" class="btn btn-warning btn-sn" [routerLink]="['/admin/edit-archivo', dato.id ]">Archivos</button></td>
+
+                            <td><button type="button" class="btn btn-success btn-sn" [routerLink]="['/admin/edit-inmueble', dato.id ]">Editar</button></td>
+
+
+                        </tr>
+                    }
+
+                </tbody>
+
+
+
+            </table>
+
+
+        </div>
+
+
+    }
+
+
+</div>
