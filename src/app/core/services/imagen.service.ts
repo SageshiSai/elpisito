@@ -13,6 +13,25 @@ export class ImagenService {
 
   //MÉTODOS STORAGE DE IMAGEN
 
+  uploadImagen(formData:FormData,id:number):Observable<any>{
+
+    return this._http.post(GLOBAL.url_imagen + id, formData);
+  }
+
+
+  deleteImagen(id:number):Observable<any>{
+
+    return this._http.delete(GLOBAL.url_imagen + id);
+
+  }
+
+
+  getImagenesPorInmueble(id:number):Observable<Imagen[]>{
+
+    return this._http.get<Imagen[]>(GLOBAL.url_media + "imagenes/" + id);
+
+  }
+
 
   
 
@@ -21,13 +40,6 @@ export class ImagenService {
     getImagenes():Observable<Imagen[]>{
   
       return this._http.get<Imagen[]>(GLOBAL.url + "imagenes");
-  
-    }
-
-  
-    getImagenesActivas():Observable<Imagen[]>{
-  
-      return this._http.get<Imagen[]>(GLOBAL.url + "imagenes-activas");
   
     }
 

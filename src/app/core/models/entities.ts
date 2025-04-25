@@ -152,4 +152,20 @@ export interface Archivo{
 }
 
 
+export interface Usuario{
+
+  id?:number;
+  user:string;
+  password:string;
+  email:string;
+  rol?:string;
+  activo?:number;
+}
+
+export interface Credentials{
+
+  username:string; //realmente es el email
+  password:string;
+}
+
 

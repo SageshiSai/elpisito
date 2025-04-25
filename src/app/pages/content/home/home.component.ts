@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FinderComponent } from '../../../shared/components/finder/finder.component';
+import { BannerHorizontalComponent } from '../../../shared/components/banner-horizontal/banner-horizontal.component';
 import { ListPortadaComponent } from '../../../shared/components/list-portada/list-portada.component';
 import { BannerHorizontal } from '../../../core/models/entities';
 import { BannerService } from '../../../core/services/banner.service';
@@ -16,12 +17,12 @@ export class HomeComponent implements OnInit{
 
   /////////////////////////////////////////////////
   nFases:number = 1;
-  cargaCompletada:boolean = true;
+  cargaCompletada:boolean = false;
   fasesCargadas:number = 0;
   /////////////////////////////////////////////////
 
-  private readonly _bannerService:BannerService = inject(BannerService);
-  private readonly _router:Router = inject(Router);
+  private _bannerService:BannerService = inject(BannerService);
+  private _router:Router = inject(Router);
 
   banners:Array<BannerHorizontal> = [];
 
@@ -33,14 +34,16 @@ export class HomeComponent implements OnInit{
 
   getDatos():void{
 
-    this._bannerService.getBannersHorizontalesActivosHome().subscribe({
+    this._bannerService.getBannersHorizontalesActivos().subscribe({
 
       next: (datos) => {
-        this.banners = datos;
-        //console.log(this.banners);
+
+        this.banners = datos.filter( banner => banner.home == 1);
+
       }
       ,
-      error: (error) => {this._router.navigate(["/error"])},
+      error: (error) => {this._router.navigate(["/error"])}
+      ,
       complete: () => {this.faseCarga()}
 
 

@@ -78,7 +78,7 @@ getDatos():void{
 edit():void{
 
   this.provincia.activo = Number(this.provincia.activo);
-  this.provincia.nombre = this.provincia.nombre.toLocaleUpperCase();
+  this.provincia.nombre = this.provincia.nombre.toUpperCase();
 
   this._provinciaService.updateProvincia(this.provincia).subscribe({
 
@@ -87,7 +87,7 @@ edit():void{
       this.datosModal.titulo = "Modificar provincia";
       this.datosModal.status = "200";
       this.datosModal.mensaje = datos.mensaje;
-      this.datosModal.origen = "provincia";
+      this.datosModal.origen = "provincia";   
       this.modalAdmin.showModal();
 
     }
@@ -97,7 +97,7 @@ edit():void{
       this.datosModal.titulo = "Modificar provincia";
       this.datosModal.status = error.status; //400,403...
       this.datosModal.mensaje = error.error.mensaje;
-      this.datosModal.origen = "provincia";
+      this.datosModal.origen = "provincia";         
       this.modalAdmin.showModal();
 
     }

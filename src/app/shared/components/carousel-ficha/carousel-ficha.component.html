@@ -2,30 +2,30 @@
 
 <div class="contenedor">
 
-  @if(imagenesActivas.length > 0){
+  @if(imagenes.length > 0){
 
     <div id="carouselFicha{{datosInmueble.id}}" class="carousel slide">
         <div class="carousel-inner">
-  
-          @for( imagen of imagenesActivas ;  track imagen.id; let i = $index ){
-  
+
+          @for( imagen of imagenes ;  track imagen.id; let i = $index ){
+
             <div [ngClass]="{
-  
+
                     'carousel-item' : true,
                     'active' : i == 0,
-  
-  
+
+
             }">
               <img src="{{url + imagen.nombre}}" class="d-block w-100" alt="{{datosInmueble.descripcion}}">
             </div>
-  
+
           }
-  
-        
+
+
         </div>
-  
+
         @if(datosInmueble.imagenes.length > 1){
-  
+
           <button class="carousel-control-prev" type="button" [attr.data-bs-target]='"#carouselFicha" + datosInmueble.id' data-bs-slide="prev">
             <span class="carousel-control -prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Anterior</span>
@@ -34,27 +34,27 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
           </button>
-  
+
         }
-  
+
       </div><!-- FIN CAROUSEL -->
-  
+
   } <!-- CIERRE DEL IF -->
-  
+
   @else {
-  
+
     <div class="contenedor-no-imagen">
       <img src="assets/img/imagen-pisito-defecto.jpg" alt="Al no existir ninguna imagen para el inmueble vemos esta imagen por defecto">
     </div>
-  
+
   }
-  
-  
+
+
     <!-- NÚMERO DE IMÁGENES -->
       <div class="numero-imagenes">
         <i class="fa-solid fa-camera"></i> <span>{{datosInmueble.imagenes | numeroImagenes}}</span>
       </div>
-  
+
 
 
 </div>

@@ -14,7 +14,7 @@ import { ModalAdminComponent } from '../../../shared/components/modal-admin/moda
 })
 export class AddProvinciaComponent {
 
-
+  
   @ViewChild(ModalAdminComponent) modalAdmin:ModalAdminComponent;
 
 
@@ -46,7 +46,7 @@ export class AddProvinciaComponent {
       next: (datos) => {
 
         this.datosModal.titulo = "+Provincia";
-        this.datosModal.status = "200";
+        this.datosModal.status = "201";
         this.datosModal.mensaje = datos.mensaje;
         this.datosModal.origen = "provincia";
         this.modalAdmin.showModal();
@@ -55,10 +55,9 @@ export class AddProvinciaComponent {
       } //Devuelve el objeto creado
       ,
       error: (error) => {
-
-
+      
         this.datosModal.titulo = "+Provincia";
-        this.datosModal.status = error.status; //400,403...
+        this.datosModal.status = error.status; //400,403...500
         this.datosModal.mensaje = error.error.mensaje;
         this.datosModal.origen = "provincia";
         this.modalAdmin.showModal();
@@ -69,7 +68,7 @@ export class AddProvinciaComponent {
       complete: () => {}
     });
 
-
+    
   }
 
 

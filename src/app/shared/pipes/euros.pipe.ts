@@ -13,5 +13,4 @@ export class EurosPipe implements PipeTransform {
     return numbersFormat(value) + '€';
   }
 
-
 }

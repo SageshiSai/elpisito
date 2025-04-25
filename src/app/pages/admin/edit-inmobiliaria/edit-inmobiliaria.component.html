@@ -1,0 +1,106 @@
+<section class="contenedor">
+
+    <h1>Editar inmobiliaria</h1>
+
+        @if(!cargaCompletada){
+
+        <app-preloader/>
+
+    }@else{
+
+
+      <div class="contenedor-formulario">
+
+                <div class="contenedor-subida-imagen mb-3">
+
+              <h3>IMAGEN</h3>
+
+
+                  @if(hayImagen){
+
+
+                    <div class="contenedor-thumb-boton">
+
+                        <img class="thumbnail-imagen-elegida" [src]="url+inmobiliaria.imagen?.nombre">
+                        <button class= "btn btn-md btn-warning"  (click)="eliminarImagen()">Sustituir el logo</button>
+
+
+                    </div>
+
+
+
+
+                  }@else {
+
+                      <p>La imagen debe ser un archivo JPG del siguiente tamaño: 125px x 60px</p>
+                      <label for="imagen">{{labelElegirImagen}}</label>
+                      <input #imagen type="file" id="imagen" name="imagen" class="form-control" [disabled]="imagenesSeleccionadas" accept="image/jpeg" (change)="onImagenSelected($event)">
+
+                      @if(imagePreview){
+
+                        <div class="contenedor-thumb-boton">
+
+
+                            <img [src]="imagePreview" class="thumbnail-imagen-elegida" />
+
+                            <button class= "btn btn-md btn-warning"  (click)="sustituirImagen()">Sustituir el logo</button>
+
+
+                        </div>
+
+
+                      }
+
+                  }
+
+
+          </div>
+
+
+
+          <form #form="ngForm" class="formulario" (ngSubmit)="edit()">
+
+
+                <p class="id-form mb-3">ID:{{inmobiliaria.id}}</p>
+
+                <div class="mb-3">
+
+                    <label for="activo" class="me-2 cursor-check">ACTIVO</label>
+                    <input type="checkbox" id="activo" name="activo" class="form-check-input cursor-check" [(ngModel)]="inmobiliaria.activo">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="nombre">NOMBRE*</label>
+                    <input type="text" id="nombre" name="nombre" required class="form-control" autocomplete="off" [(ngModel)]="inmobiliaria.nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label for="representante">REPRESENTANTE-CONTACTO*</label>
+                    <input type="text" id="representante" name="representante"  class="form-control" autocomplete="off" [(ngModel)]="inmobiliaria.representante">
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefono">TELÉFONO</label>
+                    <input type="text" id="telefono" name="telefono" class="form-control" autocomplete="off" [(ngModel)]="inmobiliaria.telefono">
+                </div>
+
+
+              <div class="contenedor-boton">
+
+                  <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">Modificar</button>
+
+              </div>
+
+          </form>
+      </div>
+    }
+
+
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <app-modal-admin [datos]="datosModal"/>

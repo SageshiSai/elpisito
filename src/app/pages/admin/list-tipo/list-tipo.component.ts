@@ -25,7 +25,7 @@ export class ListTipoComponent implements OnInit {
   aDatos:Array<Tipo>= [];
 
   ngOnInit(): void {
-
+    
     this.getDatos();
   }
 
@@ -50,9 +50,9 @@ export class ListTipoComponent implements OnInit {
     faseCarga():void{
 
       this.fasesCargadas++;
-
+  
       if(this.fasesCargadas == this.nFases){
-
+  
         this.cargaCompletada = true;
       }
     }

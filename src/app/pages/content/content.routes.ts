@@ -8,6 +8,8 @@ import { ConsultaHipotecaComponent } from './consulta-hipoteca/consulta-hipoteca
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ErrorComponent } from './error/error.component';
 import { DetailInmuebleComponent } from './detail-inmueble/detail-inmueble.component';
+import { ListInmuebleFinderComponent } from './list-inmueble-finder/list-inmueble-finder.component';
+import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
 
 export const CONTENT_ROUTES: Routes = [
 
@@ -67,6 +69,19 @@ export const CONTENT_ROUTES: Routes = [
     {
         path:'error',
         component:ErrorComponent
+    }
+    ,
+    
+    {
+        path:'list-inmueble-finder',
+        component:ListInmuebleFinderComponent
+    }
+
+    ,
+    
+    {
+        path:'add-usuario',
+        component:AddUsuarioComponent
     }
 
     

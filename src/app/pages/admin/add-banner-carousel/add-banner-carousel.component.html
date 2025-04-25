@@ -1,0 +1,98 @@
+<section class="contenedor">
+
+    <h1>+Banner carousel</h1>
+
+    @if(!cargaCompletada){
+
+        <app-preloader/>
+
+    }@else{
+
+
+        <div class="contenedor-formulario">
+
+              <div class="contenedor-subida-imagen mb-3">
+
+                <h3>SUBIDA DE IMAGEN</h3>
+
+                <p>La imagen debe ser un archivo JPG del siguiente tamaño: 1518px x 358px</p>
+
+
+
+                <label for="imagen">{{labelElegirImagen}}</label>
+                <input #imagen type="file" id="imagen" name="imagen" class="form-control" [disabled]="imagenesSeleccionadas" accept="image/jpeg" (change)="onImagenSelected($event)">
+
+                    @if(imagePreview){
+
+                        <div class="contenedor-thumb-boton">
+
+
+                            <img [src]="imagePreview" class="thumbnail-imagen-elegida" />
+
+                            <button class= "btn btn-md btn-warning"  (click)="sustituirImagen()">Sustituir la imagen</button>
+
+
+                        </div>
+
+
+                    }
+
+
+            </div>
+
+
+
+            <form #form="ngForm" class="formulario" (ngSubmit)="add()">
+
+                <div class="mb-3">
+                    <label for="titular">TITULAR</label>
+                    <input type="text" id="titular" name="titular" class="form-control" autocomplete="off" [(ngModel)]="bannerCarousel.titular">
+                </div>
+
+                <div class="mb-3">
+                    <label for="claim">CLAIM</label>
+                    <input type="text" id="claim" name="claim"  class="form-control" autocomplete="off" [(ngModel)]="bannerCarousel.claim">
+                </div>
+
+                <div class="mb-3">
+                    <label for="alt-imagen">ALT IMAGEN</label>
+                    <input type="text" id="alt-imagen" name="alt-imagen" class="form-control" autocomplete="off" [(ngModel)]="bannerCarousel.altImagen">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="tematica">TEMÁTICA*</label>
+                    <select name="tematica" id="tematica" class="form-select" required [(ngModel)]="bannerCarousel.tematica.id" >
+                        @for( tematica of aTematicas; track tematica.id){
+
+                            <option [ngClass] = "{
+
+                                'select-inactivo': tematica.activo == 0
+
+
+                            }" value="{{tematica.id}}" [disabled] = "tematica.activo == 0">{{tematica.tematica}}</option>
+                        }
+
+                    </select>
+
+                  </div>
+
+
+
+                <div class="contenedor-boton">
+
+                    <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Banner carousel</button>
+
+                </div>
+
+            </form>
+
+        </div>
+    }
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <app-modal-admin [datos]="datosModal"/>

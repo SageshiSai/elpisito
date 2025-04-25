@@ -48,45 +48,69 @@
           </li>
 
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Administración
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAdministracion">
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="publica-anuncio">+Inmueble</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show"class="dropdown-item" routerLink="consulta-hipoteca">Listado de inmuebles</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Población</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de poblaciones</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-provincia">+Provincia</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-provincia">Listado de provincias</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-tipo">+Tipo</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-tipo">Listado de tipos</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Usuario</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de usuarios</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Banner Horizontal</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de Banners Horizontales</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Banner Carousel </a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de Banners Carousel</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Temática</a></li>
-              <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de Temáticas</a></li>
-            </ul>
-          </li>
-
+          @if( (isLogged && rol == "admin")  || (isLogged && rol == "admin_plus") ){
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Administración
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAdministracion">
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-inmueble">+Inmueble</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show"class="dropdown-item" routerLink="/admin/list-inmueble">Listado de inmuebles</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-poblacion">+Población</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-poblacion">Listado de poblaciones</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-provincia">+Provincia</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-provincia">Listado de provincias</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-tipo">+Tipo</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-tipo">Listado de tipos</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-inmobiliaria">+Inmobiliaria</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-inmobiliaria">Listado de inmobiliarias</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Usuario</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de usuarios</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Configuraciones Generales</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-banner-h">+Banner Horizontal</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-banner-h">Listado de Banners Horizontales</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-banner-c">+Banner Carousel </a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-banner-c">Listado de Banners Carousel</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-tematica">+Temática</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-tematica">Listado de Temáticas</a></li>
+              </ul>
+            </li>
+          }
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" routerLink="add-usuario" >Regístrate!!!</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
+
+          @if(!isLogged){
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/auth/login">Login</a>
+            </li>
+
+          }@else {
+
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+
+          }
+  
+
+
+
+
+
+     
+
 
 
         </ul>

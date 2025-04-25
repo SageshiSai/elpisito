@@ -1,18 +1,22 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appNoImagen]'
 })
 export class NoImagenDirective {
 
-  constructor(
-    private _nodoDOM: ElementRef,
-    private _renderer: Renderer2
-  ) { }
+  //ALLÁ DONDE COLOQUE ESTA DIRECTIVA EL "nodoDOM" (LA ETIQUETA HTML)
+  //SERÁ LA ETIQUETA REFERENCIADA
+  private nodoDOM : ElementRef = inject( ElementRef);
+  private renderer : Renderer2 = inject(Renderer2);
 
 
-  @HostListener('error')
+  @HostListener("error")
   onError():void{
-    this._renderer.setAttribute(this._nodoDOM.nativeElement, 'src', 'assets/img/no-imagen.jpg');
+
+    this.renderer.setAttribute(this.nodoDOM.nativeElement, "src", "assets/img/no-imagen.jpg");
+
   }
+
+  
 }

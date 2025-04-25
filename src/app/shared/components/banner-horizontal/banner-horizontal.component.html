@@ -1,7 +1,7 @@
 <div class="contenedor">
 
     <div>
-        <img appNoImagenBanner [src]="url + datos.imagen.nombre" [alt]="datos.altImagen" class="imagen">
+        <img appNoImagenBanner [src]="url + datos.imagen?.nombre" [alt]="datos.altImagen" class="imagen">
 
         <img class="logito" src="assets/img/el-pisito.svg">
 
@@ -16,10 +16,10 @@
             <p>{{datos.claim}}</p>
         </div>
 
-        
+
 
         @if(!(datos.link == "")){
-       
+
              <a routerLink="/{{datos.link}}">{{datos.textoLink}}</a>
         }
 

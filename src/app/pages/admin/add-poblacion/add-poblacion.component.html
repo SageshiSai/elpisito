@@ -1,0 +1,56 @@
+<section class="contenedor">
+
+    <h1>+Población</h1>
+
+    @if(!cargaCompletada){
+
+        <app-preloader/>
+    }@else{
+
+        <div class="contenedor-formulario">
+
+            <form #form="ngForm" class="formulario" (ngSubmit)="add()">
+
+                <div class="mb-3">
+                    <label for="poblacion">POBLACIÓN*</label>
+                    <input type="text" id="poblacion" name="poblacion" required class="form-control" style="text-transform: uppercase;"  autocomplete="off" [(ngModel)]="poblacion.nombre">
+                </div>
+
+                <div>
+                    <label for="provincia">PROVINCIA*</label>
+                    <select name="provincia" id="provincia" class="form-select" required [(ngModel)]="poblacion.provincia.id" >
+                        @for( provincia of aProvincias; track provincia.id){
+
+                            <option [ngClass] = "{
+
+                                'select-inactivo': provincia.activo == 0
+
+                        
+                            }" value="{{provincia.id}}" [disabled] = "provincia.activo == 0">{{provincia.nombre}}</option>
+                        }
+
+                    </select>
+
+                </div>
+
+
+                <div class="contenedor-boton">
+
+                    <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Población</button>
+
+                </div>
+
+            </form>
+
+
+        </div>
+    }
+
+
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <app-modal-admin [datos]="datosModal"/>

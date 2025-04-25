@@ -19,9 +19,9 @@ export class ListPortadaComponent implements OnInit{
     cargaCompletada:boolean = false;
     fasesCargadas:number = 0;
     /////////////////////////////////////////////////
-
-  private readonly _inmuebleService:InmuebleService=inject(InmuebleService);
-  private readonly _router:Router=inject(Router);
+  
+  private _inmuebleService:InmuebleService=inject(InmuebleService);
+  private _router:Router=inject(Router);
 
   inmuebles:Array<Inmueble> = [];
 
@@ -33,8 +33,8 @@ export class ListPortadaComponent implements OnInit{
 
     this._inmuebleService.getInmueblesPortada().subscribe({
 
-      next: (datos) => {
-        console.log(datos);
+      next: (datos) => { 
+       
         this.inmuebles = datos;
       }
       ,
@@ -50,9 +50,9 @@ export class ListPortadaComponent implements OnInit{
     faseCarga():void{
 
       this.fasesCargadas++;
-
+  
       if(this.fasesCargadas == this.nFases){
-
+  
         this.cargaCompletada = true;
       }
     }

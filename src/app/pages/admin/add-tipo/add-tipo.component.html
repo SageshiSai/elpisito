@@ -1,26 +1,26 @@
 <section class="contenedor">
 
-  <h1>+Tipo</h1>
+    <h1>+Tipo</h1>
 
-  <div class="contenedor-formulario">
+    <div class="contenedor-formulario">
 
-      <form #form="ngForm" class="formulario" (ngSubmit)="add()">
+        <form #form="ngForm" class="formulario" (ngSubmit)="add()">
 
-          <div>
-              <label for="tipo">TIPO*</label>
-              <input type="text" id="tipo" name="nombre" required class="form-control" style="text-transform: uppercase;"    autocomplete="off" [(ngModel)]="tipo.nombre">
-          </div>
+            <div>
+                <label for="tipo">TIPO*</label>
+                <input type="text" id="tipo" name="nombre" required class="form-control" style="text-transform: uppercase;"    autocomplete="off" [(ngModel)]="tipo.nombre">
+            </div>
 
-          <div class="contenedor-boton">
+            <div class="contenedor-boton">
 
-              <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Tipo</button>
+                <button class="btn btn-md btn-primary" type="submit" [disabled]="form.invalid">+Tipo</button>
 
-          </div>
+            </div>
 
-      </form>
+        </form>
 
 
-  </div>
+    </div>
 
 
 
@@ -29,7 +29,7 @@
 
 
 <!-- VENTANA MODAL -->
-<app-modal-admin [datos]="datosModal"/>
+ <app-modal-admin [datos]="datosModal"/>
 
 
 

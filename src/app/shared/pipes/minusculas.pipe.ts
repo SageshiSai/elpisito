@@ -9,5 +9,4 @@ export class MinusculasPipe implements PipeTransform {
     return value.toLowerCase();
   }
 
-
 }

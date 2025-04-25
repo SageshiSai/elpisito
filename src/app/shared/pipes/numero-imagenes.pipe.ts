@@ -10,5 +10,4 @@ export class NumeroImagenesPipe implements PipeTransform {
     return value.length;
   }
 
-
 }

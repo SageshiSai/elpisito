@@ -15,7 +15,7 @@ import { ModalAdminComponent } from '../../../shared/components/modal-admin/moda
 export class AddTipoComponent {
 
     @ViewChild(ModalAdminComponent) modalAdmin:ModalAdminComponent;
-
+  
 
     private _tipoService:TipoService = inject(TipoService);
     private _router:Router = inject(Router);
@@ -43,23 +43,23 @@ export class AddTipoComponent {
       this._tipoService.addTipo(this.tipo).subscribe({
 
         next: (datos) => {
-
+  
           this.datosModal.titulo = "+Tipo";
-          this.datosModal.status = "200";
+          this.datosModal.status = "201";
           this.datosModal.mensaje = datos.mensaje;
-          this.datosModal.origen = "tipo";
+          this.datosModal.origen = "tipo";   
           this.modalAdmin.showModal();
 
 
         } //Devuelve el objeto creado
         ,
         error: (error) => {
-
+      
 
           this.datosModal.titulo = "+Tipo";
           this.datosModal.status = error.status; //400,403...
           this.datosModal.mensaje = error.error.mensaje;
-          this.datosModal.origen = "tipo";
+          this.datosModal.origen = "tipo";         
           this.modalAdmin.showModal();
 
 
@@ -68,7 +68,7 @@ export class AddTipoComponent {
         complete: () => {}
       });
 
-
+      
     }
 
 

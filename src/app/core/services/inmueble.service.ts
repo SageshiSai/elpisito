@@ -10,7 +10,7 @@ import { GLOBAL } from '../environments/global';
 export class InmuebleService {
 
 
-  private readonly _http:HttpClient=inject(HttpClient);
+  private _http:HttpClient=inject(HttpClient);
 
 
 
@@ -50,7 +50,7 @@ export class InmuebleService {
   }
 
 
-  updateTipo(inmueble:Inmueble):Observable<any>{
+  updateInmueble(inmueble:Inmueble):Observable<any>{
 
     return this._http.put<any>(GLOBAL.url + "inmueble",inmueble);
   }

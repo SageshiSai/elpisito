@@ -24,7 +24,7 @@ export class EditTipoComponent implements OnInit,OnDestroy{
   /////////////////////////////////////////////////
 
   @ViewChild(ModalAdminComponent) modalAdmin:ModalAdminComponent;
-
+  
 
   private _tipoService:TipoService=inject(TipoService);
   private _router:Router=inject(Router);
@@ -79,7 +79,7 @@ export class EditTipoComponent implements OnInit,OnDestroy{
   edit():void{
 
     this.tipo.activo = Number(this.tipo.activo);
-    this.tipo.nombre = this.tipo.nombre.toLocaleUpperCase();
+    this.tipo.nombre = this.tipo.nombre.toUpperCase();
 
     this._tipoService.updateTipo(this.tipo).subscribe({
 
@@ -88,7 +88,7 @@ export class EditTipoComponent implements OnInit,OnDestroy{
         this.datosModal.titulo = "Modificar tipo";
         this.datosModal.status = "200";
         this.datosModal.mensaje = datos.mensaje;
-        this.datosModal.origen = "tipo";
+        this.datosModal.origen = "tipo";   
         this.modalAdmin.showModal();
 
       }
@@ -98,7 +98,7 @@ export class EditTipoComponent implements OnInit,OnDestroy{
         this.datosModal.titulo = "Modificar tipo";
         this.datosModal.status = error.status; //400,403...
         this.datosModal.mensaje = error.error.mensaje;
-        this.datosModal.origen = "tipo";
+        this.datosModal.origen = "tipo";         
         this.modalAdmin.showModal();
 
       }

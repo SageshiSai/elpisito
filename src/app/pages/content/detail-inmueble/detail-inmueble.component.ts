@@ -33,7 +33,7 @@ export class DetailInmuebleComponent implements OnInit, OnDestroy{
     cargaCompletada:boolean = false;
     fasesCargadas:number = 0;
     /////////////////////////////////////////////////
-    
+
 
   private _inmuebleService:InmuebleService = inject(InmuebleService);
   private _router:Router = inject(Router);
@@ -74,14 +74,11 @@ export class DetailInmuebleComponent implements OnInit, OnDestroy{
 
     this._inmuebleService.getInmueble(this.id).subscribe({
 
-      next: (datos) => { 
-        
+      next: (datos) => {
+
         this.datos = datos;
-        console.log(this.datos);
-        this.datos.imagenes = this.datos.imagenes.filter( img => img.activo === 1 );
-        this.datos.archivos = this.datos.archivos.filter( a => a.activo === 1 );
-      
-      
+
+
       }
       ,
       error: (error) => { this._router.navigate(["/error"])}
@@ -130,7 +127,7 @@ export class DetailInmuebleComponent implements OnInit, OnDestroy{
       ,
       panelClass: ["custom-style"]//Clase para personalizar el estilo
       ,
-      maxWidth:'100vw' //Asegura que no sobresalga del área visible 
+      maxWidth:'100vw' //Asegura que no sobresalga del área visible
       ,
       maxHeight:'100vh' //Asegura que no se desborde
 
@@ -170,9 +167,9 @@ export class DetailInmuebleComponent implements OnInit, OnDestroy{
     faseCarga():void{
 
       this.fasesCargadas++;
-  
+
       if(this.fasesCargadas == this.nFases){
-  
+
         this.cargaCompletada = true;
       }
     }

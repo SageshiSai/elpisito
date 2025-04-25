@@ -2,30 +2,60 @@ import { Component, ElementRef, inject, Input, OnDestroy, OnInit, ViewChild } fr
 import { Router } from '@angular/router';
 import { ModalData } from '../../../core/models/auxiliars';
 import Modal from 'bootstrap/js/dist/modal';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-modal-admin',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './modal-admin.component.html',
   styleUrl: './modal-admin.component.css'
 })
 export class ModalAdminComponent implements OnInit, OnDestroy{
 
- 
+
+
   private _router:Router=inject(Router);
 
   @ViewChild('modalAdmin') modalAdmin:ElementRef;
-  @Input() datos:ModalData; 
+  @Input() datos:ModalData;
 
   clickHandler:any;
-  
+
+  seleccionada:string="listado";
+
+
   ngOnInit(): void {
+
     //Necesitamos referenciar la función que irá como callback en el addEventListener
     //porque de esta manera la podremos destruir (con su referencia) en el Hook OnDestroy
     //Si, por el contrario, utilizamos una función anónima el método removeEventListener
     //no sabrá cual es la función que está en memoria que debe de eliminar (porque no tiene referencia!!!)
 
-     this.clickHandler = () => {this._router.navigate(["/admin/list-"+ this.datos.origen]);}
+     this.clickHandler = () => {
+
+      if(this.datos.origen != "inmueble"){
+        this._router.navigate(["/admin/list-"+ this.datos.origen]);
+      }else{
+
+        switch(this.seleccionada){
+          case "listado":
+            this._router.navigate(["/admin/list-inmueble"]);
+            break;
+          case "imagenes":
+            this._router.navigate(["/admin/edit-imagen",this.datos.id]);
+            break;
+          case "archivos":
+          this._router.navigate(["/admin/edit-archivo",this.datos.id]);
+          break;
+        }
+
+
+      }
+
+
+
+    }
   }
 
 
@@ -34,21 +64,14 @@ export class ModalAdminComponent implements OnInit, OnDestroy{
     //que van a quedar presentes en memoria: Observables hot, listeners...
 
     this.modalAdmin.nativeElement.removeEventListener('hidden.bs.modal', this.clickHandler);
-    
+
 
     }
 
 
-  esOK():boolean{
-
-    return this.datos.status.startsWith("2") ? true : false;
-
-  }
-
-
   showModal():void{
 
-  
+
     const modal = new Modal(this.modalAdmin.nativeElement);
     modal.show();
 

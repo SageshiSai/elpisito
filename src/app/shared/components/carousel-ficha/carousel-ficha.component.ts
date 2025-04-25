@@ -15,13 +15,11 @@ export class CarouselFichaComponent implements OnInit {
 
   @Input() datosInmueble:Inmueble; //Aquí están todos los datos del inmueble
   url:string = GLOBAL.url_imagen; //http://localhost:8080/media/file/
-  imagenesActivas:Array<Imagen> = [];
+  imagenes:Array<Imagen> = [];
 
   ngOnInit(): void {
-    
-    this.imagenesActivas  =  this.datosInmueble.imagenes.filter( img => img.activo === 1 );
 
-    console.log(this.imagenesActivas);
+    this.imagenes  =  this.datosInmueble.imagenes;
 
   }
 

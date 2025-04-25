@@ -9,11 +9,11 @@
 
           'active': i==0
 
-          
-        }"></button>
-        
 
-      } 
+        }"></button>
+
+
+      }
 
      <!--  HTML ORIGINAL DE BOOTSTRAP 5 -->
      <!-- <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -23,7 +23,7 @@
       <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="4" aria-current="false" aria-label="Slide 5"></button> -->
     </div>
 
-     
+
 
     <div class="carousel-inner">
 
@@ -39,12 +39,12 @@
         }">
 
 
-          <img [src]="url + banner.imagen.nombre" class="d-block w-100" [alt]="banner.altImagen">
+          <img [src]="url + banner.imagen?.nombre" class="d-block w-100" [alt]="banner.altImagen">
 
           @if( i == 0 ){
             <img class="logo" src="assets/img/elpisito-logo-carousel.png">
           }
-          
+
 
 
           <div class="carousel-caption d-none d-md-block">
