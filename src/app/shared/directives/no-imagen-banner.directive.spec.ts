@@ -5,4 +5,5 @@ describe('NoImagenBannerDirective', () => {
     const directive = new NoImagenBannerDirective();
     expect(directive).toBeTruthy();
   });
+  
 });
