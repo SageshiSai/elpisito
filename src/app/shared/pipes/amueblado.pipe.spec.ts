@@ -1,4 +1,4 @@
-import { AmuebladoPipe } from './amueblado.pipe';
+import { AmuebladoPipe } from "./amueblado.pipe";
 
 describe('AmuebladoPipe', () => {
   it('create an instance', () => {

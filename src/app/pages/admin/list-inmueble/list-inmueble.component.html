@@ -60,9 +60,9 @@
 
                             </td>
 
-                            <td><button type="button" class="btn btn-warning btn-sn" [routerLink]="['/admin/edit-imagen', dato.id ]">Imágenes</button></td>
+                            <td><button type="button" class="btn btn-warning btn-sn" [routerLink]="['/admin/edit-imagen', dato.id ]"><i class="fa-solid fa-image"></i> ({{dato.imagenes.length}})</button></td>
 
-                            <td><button type="button" class="btn btn-warning btn-sn" [routerLink]="['/admin/edit-archivo', dato.id ]">Archivos</button></td>
+                            <td><button type="button" class="btn btn-secondary btn-sn" [routerLink]="['/admin/edit-archivo', dato.id ]"><i class="fa-solid fa-file-pen"></i>  ({{dato.archivos.length}})</button></td>
 
                             <td><button type="button" class="btn btn-success btn-sn" [routerLink]="['/admin/edit-inmueble', dato.id ]">Editar</button></td>
 

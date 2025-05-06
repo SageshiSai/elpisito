@@ -29,8 +29,21 @@
     color:var(--azul-logo);
 }
 
+.usuario-icono-nombre{
+
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    margin-left: 1rem;
+    background-color: var(--amarillo-logo);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
 
 
+.logout{
+    cursor: pointer;
+}
 
 
 /* ================================================= */

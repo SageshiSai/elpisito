@@ -25,16 +25,16 @@ export class LoginComponent {
 
     username:"", //en realidad es el email
     password:"",
-    
+
   }
 
    datosModal:ModalData={
-  
+
       titulo:"",
       status:"",
       mensaje:"",
       origen:""
-  
+
     };
 
 
@@ -69,21 +69,24 @@ export class LoginComponent {
 
           this._authService.setTokenInLocalStorage(response.jwt);
           this._comunicacionService.cambioLogueo(true);
-       
+          this._comunicacionService.cambioPortada(!this._authService.isLoggedIn() ||  (this._authService.isLoggedIn() && this._authService.getRol() == "user"));
+
+
+
           this.datosModal.titulo = "Login";
           this.datosModal.status = "201";
           this.datosModal.mensaje = response.messageTitle;
-          this.datosModal.origen = "login";   
+          this.datosModal.origen = "login";
           this.modalUsuario.showModal();
-        
+
       }
       ,
-      error: (error) => { 
+      error: (error) => {
 
           this.datosModal.titulo = "Login";
           this.datosModal.status = error.status; //400,403...
-          this.datosModal.mensaje = "Se ha producido un error, inténtalo de nuevo";
-          this.datosModal.origen = "login";         
+          this.datosModal.mensaje = "Credenciales incorrectas";
+          this.datosModal.origen = "login";
           this.modalUsuario.showModal();
 
 

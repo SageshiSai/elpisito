@@ -1,0 +1,88 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.contenedor{
+
+    padding: 4rem;
+    background-color: var(--gris-logo);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+
+  }
+
+.contenedor-boton{
+    display: flex;
+    justify-content: right;
+}
+
+
+
+.titulo-busqueda{
+    background-color: var(--azul-logo);
+    padding:1rem;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.imagen-logo{
+    height: 2rem;
+    filter:invert(1);
+    margin-left: 10px;
+}
+
+.imagen-logo2{
+    height: 2rem;
+    filter:invert(0.8);
+    margin-left: 10px;
+}
+
+.imagen-logo3{
+    height: 2rem;
+    filter:invert(0.6);
+    margin-left: 10px;
+}
+
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+
+
+
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+
+
+
+}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+
+
+
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}

@@ -3,6 +3,12 @@
     <!-- LOGO DE LA INMOBILIARIA -->
     <img class="logo-inmobiliaria" [src]="url + datos.inmobiliaria.imagen?.nombre" alt=":Logo de {{datos.inmobiliaria.nombre}}">
 
+    <!-- LOGO OPORTUNIDAD -->
+     @if(datos.oportunidad == 1){
+        <img class="logo-oportunidad" src="assets/img/oportunidad.png">
+     }
+    
+    
     <div class="carousel-ficha">
 
        <app-carousel-ficha [datosInmueble]="datos"/>
@@ -23,11 +29,12 @@
 
         <footer class="footer-ficha">
 
-            <div class="admin">
-
-                <i class="fa-solid fa-user-pen"></i>
-
+            <div>
+                @if( (isLogged && rol == "admin")  || (isLogged && rol == "admin_plus") ){
+                <div class="admin" [routerLink]="['/admin/edit-inmueble', datos.id ]"><i class="fa-solid fa-user-pen"></i></div>
+                }
             </div>
+
 
 
             <div class="iconos">

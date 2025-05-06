@@ -6,6 +6,8 @@ import { BannerHorizontal } from '../../../core/models/entities';
 import { BannerService } from '../../../core/services/banner.service';
 import { Router } from '@angular/router';
 import { ContenedorBannersHorizontalComponent } from "../../../shared/components/contenedor-banners-horizontal/contenedor-banners-horizontal.component";
+import { ComunicacionService } from '../../../core/services/comunicacion.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -22,12 +24,26 @@ export class HomeComponent implements OnInit{
   /////////////////////////////////////////////////
 
   private _bannerService:BannerService = inject(BannerService);
+  private _comunicacionService:ComunicacionService = inject(ComunicacionService);
+  private _authService:AuthService = inject(AuthService);
   private _router:Router = inject(Router);
 
   banners:Array<BannerHorizontal> = [];
+  usuario:string = "";
+  isLogged:boolean;
 
   ngOnInit(): void {
+    this._comunicacionService.logueo$.subscribe({
+      next: (datos) => {
+        this.isLogged = datos;
 
+        if(this.isLogged){
+          this.usuario = this._authService.getUsuario();
+        }else{
+          this.usuario = "";
+        }
+      }
+    });
     this.getDatos();
   }
 

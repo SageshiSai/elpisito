@@ -2,15 +2,17 @@ export interface BannerHorizontal{
 
     id?:number;
     altImagen:string;
-    imagen:ImagenBanner;
+    imagen?:ImagenBanner|null;
     titular:string;
     claim:string;
     link:string;
     textoLink:string;
-    activo:number;
+    activo?:number;
     home:number;
     consultaHipotecas:number;
     detailInmueble:number;
+    servicios:number;
+    listInmuebleFinder:number;
 
 }
 
@@ -18,7 +20,26 @@ export interface ImagenBanner{
 
     id?:number;
     nombre:string;
+
+}
+
+
+export interface Inmobiliaria{
+
+    id?:number;
+    nombre:string;
+    representante:string;
     activo?:number;
+    telefono?:string;
+    imagen?:ImagenLogo|null;
+
+
+}
+
+export interface ImagenLogo{
+
+    id?:number;
+    nombre:string;
 
 }
 
@@ -27,11 +48,11 @@ export interface BannerCarousel{
 
     id?:number;
     altImagen:string;
-    imagen:ImagenCarousel;
+    imagen?:ImagenCarousel|null;
     titular:string;
     claim:string;
     tematica:Tematica;
-    activo:number;
+    activo?:number;
 
 }
 
@@ -49,7 +70,6 @@ export interface ImagenCarousel{
 
     id?:number;
     nombre:string;
-    activo?:number;
 
 }
 
@@ -57,11 +77,12 @@ export interface ImagenCarousel{
 export interface Inmueble{
 
     id?:number;
-    activo:number;
+    activo?:number;
     amueblado:number;
     apertura:string;
     archivos:Array<Archivo>;
     ascensor:number;
+    claim:string;
     cp:string;
     descripcion:string;
     inmobiliaria:Inmobiliaria;
@@ -85,32 +106,15 @@ export interface Inmueble{
     superficieUtil:number;
     tendedero:number;
     tipoCalefaccion:string;
-    claim:string;
     trastero:number;
     via:string;
     poblacion:Poblacion;
     tipo:Tipo;
+    direccionCompleta?:string;
 
 }
 
-export interface Inmobiliaria{
 
-    id?:number;
-    nombre:string;
-    activo?:number;
-    telefono:string;
-    imagen:ImagenLogo;
-
-
-}
-
-export interface ImagenLogo{
-
-    id?:number;
-    nombre:string;
-    activo?:number;
-
-}
 
 export interface Tipo{
 
@@ -139,7 +143,7 @@ export interface Imagen{
 
     id?:number;
     nombre?:string;
-    activo?:number;
+
 }
 
 
@@ -148,24 +152,27 @@ export interface Archivo{
     id?:number;
     nombre?:string;
     descripcion?:string;
-    activo?:number;
+    extension?:string;
+
 }
 
 
 export interface Usuario{
 
-  id?:number;
-  user:string;
-  password:string;
-  email:string;
-  rol?:string;
-  activo?:number;
+    id?:number;
+    user:string;
+    password:string;
+    email:string;
+    rol?:string;
+    activo?:number;
 }
+
 
 export interface Credentials{
 
-  username:string; //realmente es el email
-  password:string;
+    username:string; //realmente es el email
+    password:string;
 }
+
 
 

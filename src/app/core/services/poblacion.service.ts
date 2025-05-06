@@ -14,7 +14,7 @@ export class PoblacionService {
 
   getPoblaciones():Observable<Poblacion[]>{
 
-    return this._http.get<Poblacion[]>(GLOBAL.url + "poblacion");
+    return this._http.get<Poblacion[]>(GLOBAL.url + "poblaciones");
 
   }
 

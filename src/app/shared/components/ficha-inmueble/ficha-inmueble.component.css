@@ -22,6 +22,15 @@
     z-index: 5;
 }
 
+.logo-oportunidad{
+    position:absolute;
+    width: 80px;
+    height: auto;
+    left:10px;
+    top: 10px;
+    z-index: 6;
+}
+
 
 .carousel-ficha{
 
@@ -127,8 +136,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   margin-left: 1rem;
-   border: var(--amarillo-logo) solid 2px;
+    margin-left: 1rem;
+    border: var(--amarillo-logo) solid 2px;
+    cursor: pointer;
 }
    
 
@@ -195,6 +205,15 @@
         left: 10px;
         top: 10px;
 
+    }
+
+
+    .logo-oportunidad{
+  
+   
+        left:10px;
+        top: 60px;
+     
     }
 
 

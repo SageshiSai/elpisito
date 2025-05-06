@@ -1,1 +1,66 @@
-<p>edit-imagen works!</p>
+<section class="contenedor">
+
+  <h1>+Imágenes inmueble</h1>
+
+  @if(!cargaCompletada){
+
+      <app-preloader/>
+
+
+  }@else {
+
+
+      <div class="contenedor-formulario">
+
+            <div class="contenedor-subida-imagen mb-3">
+
+              <h3>SUBIDA DE IMÁGENES INMUEBLE - ID:{{id}}</h3>
+              <h3>{{inmueble.direccionCompleta}} - {{inmueble.poblacion.nombre}} ({{inmueble.poblacion.provincia.nombre}})</h3>
+
+              <p>Las imágenes deben ser archivos JPG del siguiente tamaño: 680px x 500px</p>
+
+              <label for="imagen">IMÁGENES</label>
+              <input #imagen type="file" id="imagen" name="imagen" class="form-control" accept="image/jpeg" (change)="upload($event)">
+
+          </div>
+
+
+          <div class="contenedor-imagenes-actuales mb-3">
+
+              <h3>IMÁGENES ACTUALES</h3>
+
+              @if(aImagenes.length > 0){
+
+                <p>Al hacer click sobre una imágen, ésta se eliminará</p>
+
+
+                <div class="contenedor-thumb-boton">
+
+                  @for(imagen of aImagenes; track imagen.id ){
+
+                    <img class="thumbnail-imagen" [src]="url+imagen.nombre" (click)="eliminarImagen(imagen.id!)">
+
+                  }
+
+
+                </div>
+
+
+
+              }@else {
+                <p>Este inmueble no tiene imágenes</p>
+
+              }
+
+          </div>
+
+      </div>
+  }
+
+
+</section>
+
+
+
+<!-- VENTANA MODAL -->
+ <!-- <app-modal-admin [datos]="datosModal"/> -->

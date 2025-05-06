@@ -3,6 +3,22 @@
 
 }
 
+textarea {
+    width: 100%;
+    field-sizing: content;
+    min-height: 38px;
+}
+
+
+h6 {
+    font-weight: bold;
+    background-color: var(--gris-logo);
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
 
 h3{
 

@@ -1,9 +1,10 @@
 <header>
 
 
-    <app-carousel-home/>
-
-
-
+    @if(veoCarousel) {
+        <app-carousel-home/>
+    } @else {
+        <app-portada-admin/>
+    }
 
 </header>

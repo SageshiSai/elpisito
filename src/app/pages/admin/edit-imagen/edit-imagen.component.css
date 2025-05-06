@@ -1,0 +1,41 @@
+.contenedor{
+    padding:1rem;
+
+}
+
+.contenedor-subida-imagen, .contenedor-imagenes-actuales{
+    padding: 1rem;
+    background-color: var(--gris-claro);
+    border-radius:0.5rem;
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.contenedor-thumb-boton{
+
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.thumbnail-imagen{
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+}
+
+h3{
+
+    background-color: var(--gris-logo);
+    color:white;
+    padding: 1rem;
+    border-radius:0.5rem;
+    margin-bottom: 1rem;
+}
+
+p{
+    font-style: italic;
+}
+
+

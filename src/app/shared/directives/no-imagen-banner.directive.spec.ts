@@ -1,4 +1,4 @@
-import { NoImagenBannerDirective } from './no-imagen-banner.directive';
+import { NoImagenBannerDirective } from "./no-imagen-banner.directive";
 
 describe('NoImagenBannerDirective', () => {
   it('should create an instance', () => {

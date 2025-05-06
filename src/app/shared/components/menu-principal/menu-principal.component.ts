@@ -52,6 +52,7 @@ export class MenuPrincipalComponent implements OnInit, OnDestroy{
 
     this._authService.logout();
     this._comunicacionService.cambioLogueo(false);
+    this._comunicacionService.cambioPortada(true);
     this._router.navigate(["/"]);
     this.usuario="";
     this.rol ="";

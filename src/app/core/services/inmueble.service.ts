@@ -27,6 +27,13 @@ export class InmuebleService {
 
   }
 
+  /* PARA LA VENTA DESDE EL BUSCADOR */
+  getInmueblesFinder(tipo:number, poblacion:number, operacion:string):Observable<Inmueble[]>{
+
+    return this._http.get<Inmueble[]>(GLOBAL.url + "inmuebles/" + tipo + "/" + poblacion + "/" + operacion);
+
+  }
+
 
 
   getInmueblesPortada():Observable<Inmueble[]>{

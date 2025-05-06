@@ -1,1 +1,74 @@
-<p>edit-archivo works!</p>
+<section class="contenedor">
+
+  <h1>+Archivos inmueble</h1>
+
+  @if(!cargaCompletada){
+
+      <app-preloader/>
+
+
+  }@else {
+
+
+      <div class="contenedor-formulario">
+
+            <div class="contenedor-subida-archivo mb-3">
+
+              <h3>SUBIDA DE ARCHIVOS INMUEBLE - ID:{{id}}</h3>
+              <h3>{{inmueble.direccionCompleta}} - {{inmueble.poblacion.nombre}} ({{inmueble.poblacion.provincia.nombre}})</h3>
+
+              <p>Los archivos solo pueden ser de estos formatos: pdf, doc, docx, xls y xlsx y no pueden superar los 5MB</p>
+
+              <label for="archivo">ARCHIVOS</label>
+              <input #archivo type="file" id="archivo" name="archivo" class="form-control" accept=".pdf,.doc,.docx,.xls,.xlsx" (change)="upload($event)">
+
+          </div>
+
+
+          <div class="contenedor-archivos-actuales mb-3">
+
+              <h3>ARCHIVOS ACTUALES</h3>
+
+              @if(aArchivos.length > 0){
+
+                <p>Al hacer click sobre un archivo, éste se eliminará</p>
+
+
+                <div class="contenedor-thumb-boton">
+
+                  @for(archivo of aArchivos; track archivo.id ){
+
+                    <div class="logo-descripcion-boton" >
+
+                      <div class="logo-descripcion" (click)="eliminarArchivo(archivo.id!)">
+                        <img class="thumbnail-archivo" [src]="'assets/img/'+ archivo.extension +'.png'">
+                        <span>{{archivo.descripcion}}</span>
+                      </div>
+
+                      <div class="boton">
+                        <button class= "btn btn-md btn-warning" >Cambiar descripción</button>
+                      </div>
+
+                    </div>
+
+
+
+                  }
+
+
+                </div>
+
+
+
+              }@else {
+                <p>Este inmueble no tiene archivos</p>
+
+              }
+
+          </div>
+
+      </div>
+  }
+
+
+</section>

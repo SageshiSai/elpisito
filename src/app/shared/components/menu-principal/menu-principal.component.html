@@ -68,9 +68,12 @@
                 <li><hr class="dropdown-divider"></li>
                 <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-inmobiliaria">+Inmobiliaria</a></li>
                 <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-inmobiliaria">Listado de inmobiliarias</a></li>
+
+                @if( isLogged && rol == "admin_plus" ){
                 <li><hr class="dropdown-divider"></li>
-                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">+Usuario</a></li>
-                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Listado de usuarios</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-usuario">+Usuario</a></li>
+                <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-usuario">Listado de usuarios</a></li>
+                }
                 <li><hr class="dropdown-divider"></li>
                 <li><a data-bs-toggle="collapse"  data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="servicios">Configuraciones Generales</a></li>
                 <li><hr class="dropdown-divider"></li>
@@ -86,9 +89,11 @@
             </li>
           }
 
+          @if(!isLogged){
           <li class="nav-item">
-            <a class="nav-link" routerLink="add-usuario" >Regístrate!!!</a>
+            <a class="nav-link" routerLink="registro-usuario" >Regístrate!!!</a>
           </li>
+          }
 
 
           @if(!isLogged){
@@ -99,17 +104,33 @@
           }@else {
 
             <li class="nav-item">
-              <a class="nav-link" (click)="logout()">Logout</a>
+              <a class="nav-link logout" (click)="logout()">Logout</a>
+            </li>
+
+            <li class="usuario-icono-nombre">
+
+              @if(rol=="user"){
+                <i class="fa-solid fa-user"></i>
+              }
+
+              @if (rol=="admin") {
+                <i class="fa-solid fa-user-gear"></i>
+              }
+
+              @if (rol=="admin_plus") {
+                <i class="fa-solid fa-user-tie"></i>
+              }
+
+              @if (rol=="inmobiliaria") {
+                <i class="fa-solid fa-house-user"></i>
+              }
+
+              <span>{{usuario}}</span>
+
             </li>
 
           }
-  
 
-
-
-
-
-     
 
 
 

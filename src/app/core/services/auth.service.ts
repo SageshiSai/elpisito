@@ -17,8 +17,11 @@ export class AuthService {
 
   token:string|null;
 
+
+
   login(credenciales:Credentials):Observable<any>{
 
+    this.logout();
     return this._http.post<any>(URL_BASE + "authenticate",credenciales);
   }
 
@@ -48,7 +51,7 @@ export class AuthService {
     try{
 
       decoded = jwtDecode(this.token);
-      //Si hay un error en el "decode" puede ser debido a que se ha intentado modificar 
+      //Si hay un error en el "decode" puede ser debido a que se ha intentado modificar
       //el token en local...entre otras muchas cosas...
 
     }catch(error){
@@ -62,10 +65,11 @@ export class AuthService {
     if(decoded.exp && decoded.exp > currentTime){
       return true;
     }else{
+      this.logout();
       return false;
     }
 
-    
+
 
   }
 
@@ -94,9 +98,9 @@ export class AuthService {
   //decodificándolo primero
   getUsuario():string{
 
-    this.token = this.getToken();   
+    this.token = this.getToken();
     const decoded:CustomJwtPayLoad = jwtDecode(this.token!);
-    return decoded.usuario;  
+    return decoded.usuario;
 
     }
 
@@ -108,7 +112,10 @@ export class AuthService {
   getRol():string{
 
     this.token = this.getToken();
-    const decoded:CustomJwtPayLoad = jwtDecode(this.token!);
+
+    if(this.token){
+
+      const decoded:CustomJwtPayLoad = jwtDecode(this.token!);
 
       let rol = decoded.ROLES;
 
@@ -124,7 +131,12 @@ export class AuthService {
 
       return rol;
 
-  
+    }else{
+      return "no_logueado";
+    }
+
+
+
   }
 
 

@@ -1,23 +1,8 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
-.contenedor{
-
-    padding:1rem;
-}
-
-.contenedor-fichas{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.criterios-busqueda{
-
-    background-color: var(--azul-logo);
-    color:white;
-    border-radius: 5px;
-    padding:1rem;
+img {
+    width: 100%;
 }
 
 
@@ -41,6 +26,10 @@
 
 
 
+
+
+
+
 }
 
 
@@ -60,4 +49,3 @@
 
 
 }
-

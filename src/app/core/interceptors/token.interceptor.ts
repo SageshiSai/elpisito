@@ -12,9 +12,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
     const cloneRequest = req.clone({
 
       headers: req.headers.append('Authorization',`Bearer ${token}`)
-      /* setHeaders:{
-        Authorization: `Bearer ${token}`,
-      } */
+ 
     });
 
     return next(cloneRequest);
@@ -25,6 +23,6 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
 
   }
 
-
+  
 
 };

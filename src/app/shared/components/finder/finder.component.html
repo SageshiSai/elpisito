@@ -1,1 +1,70 @@
-<p>finder works!</p>
+
+<div class="contenedor">
+
+      @if(!cargaCompletada){
+
+        <app-preloader/>
+
+
+    }@else {
+
+
+    <form  #form="ngForm" (submit)="find()" class="formulario">
+
+        <h6 class="titulo-busqueda">
+          BUSCA TU INMUEBLE!!!
+          <img src="assets/img/el-pisito.svg" class="imagen-logo">
+          <img src="assets/img/el-pisito.svg" class="imagen-logo2">
+          <img src="assets/img/el-pisito.svg" class="imagen-logo3">
+        </h6>
+
+            <div class="mb-3">
+
+                <label for="poblacion">POBLACIÓN*</label>
+                <select name="poblacion" id="poblacion" class="form-select" required [(ngModel)]="poblacionElegida">
+                    @for(poblacion of aPoblaciones; track poblacion.id) {
+                        <option value="{{poblacion.id}}">{{poblacion.nombre}} ({{poblacion.provincia.nombre}})</option>
+                    }
+                </select>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label for="tipo">TIPO*</label>
+                <select name="tipo" id="tipo" class="form-select" required [(ngModel)]="tipoElegido">
+                    @for(tipo of aTipos; track tipo.id) {
+                        <option  value="{{tipo.id}}">{{tipo.nombre}}</option>
+                    }
+                </select>
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label for="operacion">OPERACIÓN*</label>
+                <select name="operacion" id="operacion" class="form-select" required [(ngModel)]="operacionElegida">
+                    @for(operacion of aOperaciones; track operacion) {
+                        <option value="{{operacion}}">{{operacion}}</option>
+                    }
+                </select>
+
+            </div>
+
+
+            <div class="contenedor-boton">
+                <button type="submit" class="btn btn-md btn-primary" [disabled]="form.invalid">Buscar Inmuebles</button>
+            </div>
+
+
+
+
+    </form>
+
+  }
+
+
+</div>

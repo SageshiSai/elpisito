@@ -25,140 +25,191 @@ import { EditInmuebleComponent } from './edit-inmueble/edit-inmueble.component';
 import { EditImagenComponent } from './edit-imagen/edit-imagen.component';
 import { EditArchivoComponent } from './edit-archivo/edit-archivo.component';
 import { ListInmuebleComponent } from './list-inmueble/list-inmueble.component';
+import { adminOrAdminPlusGuard } from '../../core/guards/admin-or-admin-plus.guard';
+import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
+import { ListUsuarioComponent } from './list-usuario/list-usuario.component';
+import { EditUsuarioComponent } from './edit-usuario/edit-usuario.component';
+import { adminPlusGuard } from '../../core/guards/admin-plus.guard';
 
 export const ADMIN_ROUTES: Routes = [
 
+   
+    {
+        path:'add-usuario',
+        component:AddUsuarioComponent,
+        canActivate:[adminPlusGuard]
+    }
+    ,
+    {
+        path:'list-usuario',
+        component:ListUsuarioComponent,
+        canActivate:[adminPlusGuard]
+    }
+    ,
+    {
+        path:'edit-usuario/:id',
+        component:EditUsuarioComponent,
+        canActivate:[adminPlusGuard]
+    }
+    ,
 
     {
         path:'add-tipo',
-        component:AddTipoComponent
+        component:AddTipoComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-tipo',
-        component:ListTipoComponent
+        component:ListTipoComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-tipo/:id',
-        component:EditTipoComponent
+        component:EditTipoComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-provincia',
-        component:AddProvinciaComponent
+        component:AddProvinciaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-provincia',
-        component:ListProvinciaComponent
+        component:ListProvinciaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-provincia/:id',
-        component:EditProvinciaComponent
+        component:EditProvinciaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-poblacion',
-        component:AddPoblacionComponent
+        component:AddPoblacionComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-poblacion',
-        component:ListPoblacionComponent
+        component:ListPoblacionComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-poblacion/:id',
-        component:EditPoblacionComponent
+        component:EditPoblacionComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-tematica',
-        component:AddTematicaComponent
+        component:AddTematicaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-tematica',
-        component:ListTematicaComponent
+        component:ListTematicaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-tematica/:id',
-        component:EditTematicaComponent
+        component:EditTematicaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-banner-h',
-        component:AddBannerHorizontalComponent
+        component:AddBannerHorizontalComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-banner-h',
-        component:ListBannerHorizontalComponent
+        component:ListBannerHorizontalComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-banner-h/:id',
-        component:EditBannerHorizontalComponent
+        component:EditBannerHorizontalComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-inmobiliaria',
-        component:AddInmobiliariaComponent
+        component:AddInmobiliariaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-inmobiliaria',
-        component:ListInmobiliariaComponent
+        component:ListInmobiliariaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-inmobiliaria/:id',
-        component:EditInmobiliariaComponent
+        component:EditInmobiliariaComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-banner-c',
-        component:AddBannerCarouselComponent
+        component:AddBannerCarouselComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-banner-c',
-        component:ListBannerCarouselComponent
+        component:ListBannerCarouselComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-banner-c/:id',
-        component:EditBannerCarouselComponent
+        component:EditBannerCarouselComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'add-inmueble',
-        component:AddInmuebleComponent
+        component:AddInmuebleComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'list-inmueble',
-        component:ListInmuebleComponent
+        component:ListInmuebleComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-inmueble/:id',
-        component:EditInmuebleComponent
+        component:EditInmuebleComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
 
     ,
     {
         path:'edit-imagen/:id',
-        component:EditImagenComponent
+        component:EditImagenComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
     ,
     {
         path:'edit-archivo/:id',
-        component:EditArchivoComponent
+        component:EditArchivoComponent,
+        canActivate:[adminOrAdminPlusGuard]
     }
+
 
 
 
